@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Рег​истрация​​">
+    <meta name="description" content="">
+    <title>registration</title>
+    <link rel="stylesheet" href="{% static 'css/mains.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <!-- <script class="u-script" type="text/javascript" src="{% static 'js/main_js.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/main.js' %}" defer=""></script> -->
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script>
+        function check() {
+            var submit = document.getElementsByName('submit')[0];
+            if (document.getElementById('checkbox-3cf3').checked)
+                submit.disabled = '';
+            else
+                submit.disabled = 'disabled';
+        }
+    </script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="registration">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1" id="sec-723c" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-23-lg u-size-23-xl u-size-24-md u-size-60-sm u-size-60-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-bottom-lg u-container-layout-1">
+                                <a href='/results/main'><img class="u-image u-image-default u-image-1" src="{% static 'images/sgp.png' %}" alt="" data-image-width="464" data-image-height="120" title="main"></a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-12-md u-size-6-lg u-size-60-sm u-size-60-xs u-size-7-xl u-layout-cell-2">
+                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-container-layout-2">
+                                <a href="/results/history" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">история<span style="font-size: 0.875rem;"></span>
+                  </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-13-md u-size-60-sm u-size-60-xs u-size-7-lg u-size-7-xl u-layout-cell-3">
+                            <div class="u-container-layout u-valign-bottom-md u-valign-middle-xl u-container-layout-3">
+                                <a href="/results/standards" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">нормативы<span style="font-size: 0.875rem;"></span>
+                  </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-11-md u-size-60-sm u-size-60-xs u-size-8-lg u-size-8-xl u-layout-cell-4">
+                            <div class="u-container-layout u-container-layout-4">
+                                <a href="/results/contacts" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">справочная</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-15-xl u-size-16-lg u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-5">
+                            <div class="u-container-layout u-container-layout-5">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">версия для слабовидящих</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-clearfix u-image u-section-1" id="sec-16b6" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <h2 class="u-text u-text-body-alt-color u-text-default-lg u-text-default-md u-text-default-sm u-text-default-xl u-text-1">Рег​истрация<span style="font-weight: 400;">
+            <span style="font-weight: 700;"></span>
+                </span>
+            </h2>
+            <div class="u-custom-color-2 u-form u-radius-25 u-form-1">
+                <form method="post" class="u-clearfix u-form-spacing-12 u-form-vertical u-inner-form" style="padding: 19px;" source="email">
+                    {% csrf_token %}
+                    <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top">
+                        {% block content %}
+                        <label for="name-ef64" class="u-label">Фамилия</label>
+                        <input type="text" id="name-ef64" name="surname" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="">
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-2">
+                        <label for="select-77c4" class="u-label">Пол</label>
+                        <div class="u-form-select-wrapper">
+                            <select id="select-77c4" name="gender" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required="required" placeholder="svs">
+                              <option disabled selected > </option>
+                              <option value="Мужской" data-calc="">мужской</option>
+                              <option value="Женский" data-calc="">женский</option>
+                </select>
+                        </div>
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2 u-label-top">
+                        <label for="email-ef64" class="u-label">Имя</label>
+                        <input type="text" id="email-ef64" name="name" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-3" required="required">
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-4">
+                        <label for="select-150e" class="u-label">Факультет</label>
+                        <div class="u-form-select-wrapper">
+                            <select id="select-150e" name="faculty" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-4" required="required">
+                              <option disabled selected > </option>
+                              <option value="ИФ" data-calc="">ИФ</option>
+                              <option value="ФФ" data-calc="">ФФ</option>
+                              <option value="ФМФИ" data-calc="">ФМФИ</option>
+                              <option value="ЕГФ" data-calc="">ЕГФ</option>
+                              <option value="ФНО" data-calc="">ФНО</option>
+                              <option value="ФКИ" data-calc="">ФКИ</option>
+                              <option value="ФИЯ" data-calc="">ФИЯ</option>
+                              <option value="ФЭУС" data-calc="">ФЭУС</option>
+                              <option value="ФККиС 1 курс" data-calc="">ФККиС 1 курс</option>
+                              <option value="ФККиС 2 курс" data-calc="">ФККиС 2 курс</option>
+                              <option value="ФККиС 3 курс" data-calc="">ФККиС 3 курс</option>
+                              <option value="ФККиС 4 курс" data-calc="">ФККиС 4 курс</option>
+                              <option value="ФККиС СТ 2 курс" data-calc="">ФККиС СТ 2 курс</option>
+                              <option value="ФККиС СТ 4 курс" data-calc="">ФККиС СТ 4 курс</option>
+                              <option value="ФПСО" data-calc="">ФПСО</option>
+                            </select></div>
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-5">
+                        <label for="text-3947" class="u-label">Отчество</label>
+                        <input type="text" id="text-3947" name="patronymic" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-5" required="required">
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2 u-form-select u-label-top u-form-group-6">
+                        <label for="select-8af7" class="u-label">Курс</label>
+                        <div class="u-form-select-wrapper">
+                            <select id="select-8af7" name="cours" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-6" required="required">
+                              <option disabled selected > </option>
+                              <option value="1" data-calc="">1 курс</option>
+                              <option value="2" data-calc="">2 курс</option>
+                              <option value="3" data-calc="">3 курс</option>
+                              <option value="4" data-calc="">4 курс</option>
+                              <option value="5" data-calc="">5 курс</option>
+                            </select> </div>
+                    </div>
+                    <div class="u-form-date u-form-group u-form-partition-factor-2 u-label-top u-form-group-7">
+                        <label for="text-d48b" class="u-label">дд/мм/гггг</label>
+                        <input type="date" id="text-d48b" name="date" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-7" data-date-format="dd/mm/yyyy" required="required">
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2 u-label-top u-form-group-8">
+                        <label for="text-be3c" class="u-label">УИН</label>
+                        <input type="text" id="text-be3c" name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-8" required="required">
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-3 u-form-select u-label-top u-form-group-9">
+                        <label for="select-8879" class="u-label">Организация</label>
+                        <div class="u-form-select-wrapper">
+                            <select id="select-8879" name="organization" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-9" required="required">
+                              <option disabled selected > </option>
+                              <option value="СГСПУ" data-calc="">СГСПУ</option>
+                </select> </div>
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-10">
+                        <label for="text-3e23" class="u-label">Пароль</label>
+                        <input type="password" placeholder="" id="text-3e23" name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-10" required="required">
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-3 u-label-top u-form-group-11">
+                        <label for="text-04c4" class="u-label">Повторите пароль</label>
+                        <input type="password" placeholder="" id="text-3e23" name="password2" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-10" required="required">
+                    </div>
+                    <div class="u-form-checkbox u-form-group u-label-top u-form-group-12">
+                        <input type="checkbox" id="checkbox-3cf3" onclick="check();" value="newsletter" autocomplete="off" id="checkbox-3cf3" name="personal_data" value="On" required="required">
+                        <label for="checkbox-3cf3" id="checkbox-3cf3" class="u-label">
+                <a href="{% static 'fed-zakon/httpswww.pgsga.rusvedendocumentPolitika_PD_SGSPU_17.06.2016.pdf' %}" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-body-color u-btn-1" target="_blank">Согласие на обработку данных</a>
+                <br>
+              </label>
+                    </div>
+                    <div class="u-align-center u-form-group  u-label-top">
+
+                        <p><input type="submit" value="Зарегистрироваться" name="submit" disabled="" class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-2"></p>
+
+                    </div>
+                    {% endblock %}
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1 u-footer" id="sec-73c9">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width u-list u-list-1">
+                <div class="u-repeater u-repeater-1">
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                            <p class="u-custom-item u-text u-text-1"> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького, 65/67 </p>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-2">
+                            <p class="u-custom-item u-text u-text-default u-text-2"> Тел.: +7 (846) 207-44-00</p>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item">
+                        <div class="u-container-layout u-similar-container u-container-layout-3">
+                            <p class="u-custom-item u-text u-text-default u-text-3"> E-mail: rectorat@sgspu.ru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,254 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>profile</title>
+    <link rel="stylesheet" href="{% static 'css/stud_prof.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <script class="u-script" type="text/javascript" src="{% static 'js/stud_prof_js.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/stud_prof.js' %}" defer=""></script>
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="profile">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1 u-header" id="sec-dcc4">
+        <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-24-lg u-size-24-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-top-sm u-container-layout-1">
+                                <a href="/results/studentsPersonal" class="u-image u-logo u-image-1" data-image-width="464" data-image-height="120" title="StudentsPersonal">
+                                    <img src="{% static 'images/sgp.png' %}" class="u-logo-image u-logo-image-1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">версия для слабовидящих</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-13-lg u-size-16-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-3">
+                            <div class="u-container-layout u-valign-middle-sm u-container-layout-3">
+                                <a href="/results/profile" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">мой профиль</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-clearfix u-image u-section-1" id="sec-ab13" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-container-style u-custom-color-5 u-group u-group-1">
+                <div class="u-container-layout u-container-layout-1">
+                    <a href="/results/studentsPersonal" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-alt-color u-text-hover-palette-4-light-1 u-btn-1">Главная</a>
+                    <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{% static 'images/arrow.png' %}" alt="" data-image-width="24" data-image-height="24">
+                    <a href="/results/profile" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-alt-color u-text-hover-palette-4-light-1 u-btn-2">Профиль обучающегося</a>
+                </div>
+            </div>
+            <div class="u-clearfix u-gutter-0 u-layout-wrap u-white u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-col">
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-top u-container-layout-2">
+                                <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-2" src="{% static 'images/profile_icon.png' %}" alt="" data-image-width="512" data-image-height="512">
+                            </div>
+                        </div>
+                        <div class="u-align-center u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-3">
+                                <p class="u-text u-text-1">{{fio_user}}</p>
+                            </div>
+                        </div>
+                        <div class="u-align-center u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                            <div class="u-container-layout u-container-layout-4">
+                                <p class="u-text u-text-2">{{role}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-clearfix u-gutter-4 u-layout-wrap u-white u-layout-wrap-2">
+                <div class="u-gutter-0 u-layout">
+                    <div class="u-layout-col">
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-opacity u-opacity-90 u-size-30 u-white u-layout-cell-4">
+                                    <div class="u-container-layout u-container-layout-5">
+                                        <p class="u-text u-text-3"> УИН участника</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-5">
+                                    <div class="u-container-layout u-container-layout-6">{{uin_user}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-6">
+                                    <div class="u-container-layout u-valign-top u-container-layout-7">
+                                        <p class="u-text u-text-4"> Фамилия <span style="font-weight: 700;"></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-7">
+                                    <div class="u-container-layout u-container-layout-8">{{f_user}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-8">
+                                    <div class="u-container-layout u-container-layout-9">
+                                        <p class="u-text u-text-5"> Имя</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-9">
+                                    <div class="u-container-layout u-container-layout-10">{{i_user}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-clearfix u-gutter-0 u-layout-wrap u-white u-layout-wrap-3">
+                <div class="u-gutter-0 u-layout">
+                    <div class="u-layout-col">
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-10">
+                                    <div class="u-container-layout u-container-layout-11">
+                                        <p class="u-text u-text-6"> Отчество</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-11">
+                                    <div class="u-container-layout u-container-layout-12">{{o_user}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-12">
+                                    <div class="u-container-layout u-valign-top u-container-layout-13">
+                                        <p class="u-text u-text-default u-text-7"> Дата рождения</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-13">
+                                    <div class="u-container-layout u-container-layout-14">{{date_of_birth}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-14">
+                                    <div class="u-container-layout u-container-layout-15">
+                                        <p class="u-text u-text-default u-text-8"> Ступень ГТО</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-15">
+                                    <div class="u-container-layout u-container-layout-16">{{stage_gto}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-clearfix u-layout-wrap u-white u-layout-wrap-4">
+                <div class="u-gutter-0 u-layout">
+                    <div class="u-layout-col">
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-16">
+                                    <div class="u-container-layout u-container-layout-17">
+                                        <p class="u-text u-text-default u-text-9"> Организация</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-17">
+                                    <div class="u-container-layout u-container-layout-18">{{organization_short_name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-18">
+                                    <div class="u-container-layout u-valign-top-sm u-valign-top-xs u-container-layout-19">
+                                        <p class="u-text u-text-10"> Факультет</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-19">
+                                    <div class="u-container-layout u-container-layout-20">{{faculty_short_name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="u-size-20">
+                            <div class="u-layout-row">
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-20">
+                                    <div class="u-container-layout u-container-layout-21">
+                                        <p class="u-text u-text-default u-text-11"> Доп. информация</p>
+                                    </div>
+                                </div>
+                                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-21">
+                                    <div class="u-container-layout u-container-layout-22">
+                                        {% if additional_information == 'Нет дополнительной информации'%}
+                                    
+                                        Укажите спортивное звание или разряд при наличии
+                                    
+                                    {% else %}
+                                    
+                                        {{additional_information}}
+                                    
+                                    {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-container-style u-group u-white u-group-2">
+                <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-23">
+                    <a href="/results/profileModificStud" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">Редактировать</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1 u-footer" id="sec-6749">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                                <p class="u-text u-text-default u-text-1"> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького,</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <p class="u-text u-text-default u-text-2"> Тел.: +7 (846) 207-44-00</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                            <div class="u-container-layout u-container-layout-3">
+                                <p class="u-text u-text-default u-text-3"> E-mail: rectorat@sgspu.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

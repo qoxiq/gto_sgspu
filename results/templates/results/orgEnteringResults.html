@@ -1,0 +1,331 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>orgEnterResults</title>
+    <link rel="stylesheet" href="{%static 'css/teach.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/orgEnterResults.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <!-- <script class="u-script" type="text/javascript" src="{% static 'js/teach_js.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/teach.js' %}" defer=""></script> -->
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <script>
+        var token = '{{csrf_token}}';
+
+        function dragElement(elmnt) {
+            var pos1 = 0,
+                pos2 = 0,
+                pos3 = 0,
+                pos4 = 0;
+            if (document.getElementById(elmnt.id + "header")) {
+                /* if present, the header is where you move the DIV from:*/
+                document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+            } else {
+                /* otherwise, move the DIV from anywhere inside the DIV:*/
+                elmnt.onmousedown = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                // calculate the new cursor position:
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+
+                /* stop moving when mouse button is released:*/
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+
+        function push(e, elem) {
+                var val = document.getElementById("result_sport_competition").value;
+                let uin=document.getElementById('uin').textContent;
+                let name_sport_competition=document.getElementById('name_sport_competition').value;
+                //$.post( "", { result_sport_competition : val, uin : uin, name_sport_competition : name_sport_competition}, {% csrf_token %});
+                if (name_sport_competition == ''){
+                    alert('Выберите вид испытаний')
+                }else{
+                    $.ajax({
+                        headers: {"X-CSRFToken": token},
+                        type: "POST",
+                        url: "",
+                        data: {
+                            result_sport_competition : val,
+                            uin : uin,
+                            name_sport_competition : name_sport_competition
+                        }} );
+                    
+                    e.preventDefault();                
+                    document.getElementById(elem.parentElement.querySelector('.mods2').textContent).value = val;
+                
+                document.getElementById("result_sport_competition").value='';
+                document.getElementById("myForm").style.display = "none";
+                return false;}
+
+            }
+
+        function openForm(elem) {
+        
+        document.getElementById("myForm").style.display = "block";
+        document.querySelector('.mods1').textContent = elem.parentElement.parentElement.querySelector('.doad1').textContent;
+        document.querySelector('.mods2').textContent = elem.parentElement.parentElement.querySelector('.doad2').textContent;
+        document.getElementById('id_s_c').value=document.getElementById('name_sport_competition').value;
+        
+    }
+
+
+    function closeForm() {
+        document.getElementById("result_sport_competition").value='';
+        document.getElementById("myForm").style.display = "none";
+        dragElement(document.getElementById(("myForm")));
+    }
+    </script>
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="orgEnterResults">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1 u-header" id="sec-1178">
+        <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-25-xl u-size-30-lg u-size-34-md u-size-34-sm u-size-34-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-top u-container-layout-1">
+                                <a href="/results/teacherPersonal" class="u-image u-logo u-image-1" data-image-width="464" data-image-height="120" title="teacherPersonal">
+                                    <img src="{% static 'images/sgp.png' %}" class="u-logo-image u-logo-image-1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-26-md u-size-26-sm u-size-26-xs u-layout-cell-2">
+                            <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-2">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Версия для слабовидящих</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-10-lg u-size-15-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-3">
+                            <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-valign-top-lg u-valign-top-md u-container-layout-3">
+                                <a href="/results/profileTeacher" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">мой профиль</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-clearfix u-image u-section-1" id="sec-1f8a" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-table u-table-responsive u-table-1">
+                <table class="u-table-entity">
+                    <colgroup>
+                        <col width="2%">
+                        <col width="5.1%">
+                        <col width="92.9%">
+                    </colgroup>
+                    <tbody class="u-custom-color-3 u-table-body u-table-valign-middle u-table-body-1">
+                        <tr style="height: 37px;">
+                            <td class="u-table-cell">
+                                <a class="u-active-none u-border-2 u-border-hover-custom-color-3 u-btn u-button-style u-hover-none u-none u-text-body-alt-color u-text-hover-palette-1-light-2 u-btn-1" href="/results/teacherPersonal">Главная</a>
+                            </td>
+                            <td class="u-table-cell"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="{% static 'images/8066415-8d92c784.png' %}" alt=""></span>&nbsp;
+                            </td>
+                            <td class="u-table-cell">
+                                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-text-hover-palette-1-light-2 u-btn-2" href="/results/orgEnterResults">Внести результат</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="u-align-center u-container-style u-custom-color-4 u-group u-group-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                    <h3 class="u-text u-text-1"> Результаты тестирования каждого участника по виду испытаний</h3>
+                </div>
+            </div>
+            <div class="u-clearfix u-grey-75 u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-23 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-2">
+                                <p class="u-text u-text-2"> вид испытания (тест):</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-37 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-3">
+                                <div class="u-custom-color-5 u-form u-form-1">
+                                    <form class="u-clearfix u-form-horizontal u-form-spacing-10 u-inner-form" source="email" name="form" style="padding: 10px;">
+                                        <div class="u-form-group u-form-select u-label-none u-form-group-1">
+                                            <label for="select-d6b9" class="u-label u-label-1">Испытания (тесты)</label>
+                                            <div class="u-form-select-wrapper">
+                                                <select type='text' id="name_sport_competition" name="name_sport_competition" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1">
+                                                    <option disabled selected > </option>
+                                                    <option value="Бег на 30 м" data-calc="">Бег на 30 м</option>
+                                                    <option value="Бег на 60 м" data-calc="">Бег на 60м</option>
+                                                    <option value="Бег на 100 м" data-calc="">Бег на 100м</option>
+                                                    <option value="Бег на 3000 м" data-calc="">Бег на 3000 м</option>
+                                                    <option value="Бег на 2000 м" data-calc="">Бег на 2000 м</option>
+                                                    <option value="Подтягивание из виса на высокой перекладине" data-calc="">Подтягивание из виса на высокой перекладине</option>
+                                                    <option value="Сгибание и разгибание  рук в упоре лежа на полу" data-calc="">Сгибание и разгибание  рук в упоре лежа на полу</option>
+                                                    <option value="Рывок гири 16 кг" data-calc="">Рывок гири 16 кг</option>
+                                                    <option value="Наклон вперед из положения стоя на гимнастической скамье" data-calc="">Наклон вперед из положения стоя на гимнастической скамье</option>
+                                                    <option value="Челночный бег 3х10м" data-calc="">Челночный бег 3х10м</option>
+                                                    <option value="Прыжок в длину с разбега" data-calc="">Прыжок в длину с разбега</option>
+                                                    <option value="Прыжок в длину с м двумя ногами (см)еста толчком" data-calc="">Прыжок в длину с м двумя ногами (см)еста толчком</option>
+                                                    <option value="Метание спортивного снаряда весом 700 г" data-calc="">Метание спортивного снаряда весом 700 г</option>
+                                                    <option value="Метание спортивного снаряда весом 500 г" data-calc="">Метание спортивного снаряда весом 500 г</option>
+                                                    <option value="Поднимание туловища из положения лежа на спине" data-calc="">Поднимание туловища из положения лежа на спине</option>
+                                                    <option value="Бег на лыжах на 5 км" data-calc="">Бег на лыжах на 5 км</option>
+                                                    <option value="Кросс на 5 км (бег по пересеченной местности)" data-calc="">Кросс на 5 км (бег по пересеченной местности)</option>
+                                                    <option value="Бег на лыжах на 3 км" data-calc="">Бег на лыжах на 3 км</option>
+                                                    <option value="Кросс на 3 км (бег по пересеченной местности)" data-calc="">Кросс на 3 км (бег по пересеченной местности)</option>
+                                                    <option value="Плавание на 50 м" data-calc="">Плавание на 50 м</option>
+                                                    <option value="Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м (очки): из пневматической винтовки с открытым прицелом" data-calc="">Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м (очки): из пневматической винтовки с открытым прицелом</option>
+                                                    <option value="Стрельба из пневматической винтовки с диоптрическим прицелом, либо «электронного оружия»" data-calc="">Стрельба из пневматической винтовки с диоптрическим прицелом, либо «электронного оружия»</option>
+                                                    <option value="Самозащита без оружия (очки)" data-calc="">Самозащита без оружия (очки)</option>
+                                                    <option value="Туристический поход с проверкой туристических навыков (протяженность не менее, км)" data-calc="">Туристический поход с проверкой туристических навыков (протяженность не менее, км)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="u-align-center u-form-group u-form-submit u-label-none">
+                                            <a href="" class="u-border-none u-btn  u-button-style u-custom-color-9 u-hover-custom-color-2 u-btn-3">Вывести<br>
+                        </a>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-table u-table-responsive u-table-2 container">
+                <table class="u-table-entity">
+                    {% block content %}
+                        {% if students %}
+                    <colgroup>
+                        <col width="42.4%">
+                        <col width="24.4%">
+                        <col width="33.2%">
+                    </colgroup>
+                    <thead class="u-align-center u-grey-90 u-table-header u-table-header-1 sticky">
+                        <tr style="height: 47px;">
+                            <th class="u-border-1 u-border-grey-dark-1 u-table-cell u-table-cell-4 sticky">Ф.И.О</th>
+                            <th class="u-border-1 u-border-grey-dark-1 u-table-cell sticky">УИН участника</th>
+                            <th class="u-border-1 u-border-grey-dark-1 u-table-cell sticky">Результат</th>
+                        </tr>
+                    </thead>
+                    
+                    <tbody class="u-grey-75 u-table-body u-table-body-2">
+                        {% for uin, fio in students.items %}
+                        <tr style="height: 47px;">
+                            <td class="doad1">{{fio}}</td>
+                            <td class="doad2">{{uin}}</td>
+                            <td> <input id={{uin}} onclick="openForm(this)" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required=""></td>
+                              
+                                
+                            </td>
+                        </tr>
+
+                        {% endfor %}
+                            {% else %}
+                                <p>Отсутствуют записи</p>
+                            {% endif %} 
+                        {% endblock %}
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1" id="sec-3b38" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                            <div class="u-container-layout u-container-layout-1">
+                                <p class="u-text u-text-default u-text-1"> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького,</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <p class="u-text u-text-default u-text-2"> Тел.: +7 (846) 207-44-00</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                            <div class="u-container-layout u-container-layout-3">
+                                <p class="u-text u-text-default u-text-3"> E-mail: rectorat@sgspu.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+<div class="form-popup" id="myForm">
+    <form action="" class="form-container" method="post">
+        {% csrf_token %}
+        <div id="myFormheader">Введите результат участника</div>
+        <table class="table table-dark" id="tabl_one_with_forma">
+            <input id="id_s_c" name="id_s_c" hidden="true">
+            <tr class="form_class">
+                <td style="color: rgb(250, 250, 250)">ФИО</td>
+                <td id="mods1" class="mods1" style="color: rgb(250, 250, 250)"></td>
+
+
+            </tr>
+            <tr class="form_class">
+                <td style="color: rgb(250, 250, 250)">УИН</td>
+                <td class="mods2" id="uin" style="color: rgb(250, 250, 250)"></td>
+
+            </tr>
+            <tr class="form_class">
+                <td style="color: rgb(250, 250, 250)">Результат</td>
+                <td><input id="result_sport_competition" type="text" placeholder="" name="result_sport_competition" required>
+                </td>
+
+
+            </tr>
+
+        </table>
+        <input type="button" value="Сохранить" class="btn" onclick="push(event, this)">
+        <button type="button" class="btn cancel" onclick="closeForm()">Выйти</button>
+
+    </form>
+</div>
+
+</html>

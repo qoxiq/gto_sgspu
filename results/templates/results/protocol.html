@@ -1,0 +1,246 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="​Протокол выполнения государственных требований к физической подготовленности граждан Российской Федерации">
+    <meta name="description" content="">
+    <title>protocol</title>
+    <link rel="stylesheet" href="{% static 'css/teacher.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/protocol.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <!-- <script class="u-script" type="text/javascript" src="{% static 'js/js_min.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/teacher.js' %}" defer=""></script> -->
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="protocol">
+    <meta property="og:type" content="website">
+    <link rel="canonical" href="/">
+    <meta data-intl-tel-input-cdn-path="intlTelInput/">
+    <script>
+        var token = '{{csrf_token}}';
+
+        function push() {
+        let name_sport_competition=document.getElementById('name_sport_competition').value;
+        
+        if (name_sport_competition == ''){
+            alert('Выберите вид испытаний')
+        }else{
+            console.log(token)
+            $.ajax({
+                headers: {"X-CSRFToken": token},
+                type: "POST",
+                url: "",
+                data: {
+                    name_sport_competition : name_sport_competition
+                }} );
+            
+        return false;}
+
+    }
+    </script>
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1 u-header" id="sec-22e9">
+        <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-25-xl u-size-30-lg u-size-34-md u-size-34-sm u-size-34-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-top u-container-layout-1">
+                                <a href="/results/teacherPersonal" class="u-image u-logo u-image-1" data-image-width="464" data-image-height="120" title="teacherPersonal">
+                                    <img src="{% static 'images/sgp.png' %}" class="u-logo-image u-logo-image-1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-26-md u-size-26-sm u-size-26-xs u-layout-cell-2">
+                            <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-2">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Версия для слабовидящих</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-10-lg u-size-15-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-3">
+                            <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-valign-top-lg u-valign-top-md u-container-layout-3">
+                                <a href="/results/profileTeacher" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">мой профиль</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-clearfix u-image u-section-1" id="sec-5fa3" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-expanded-width-md u-expanded-width-sm u-table u-table-responsive u-table-1">
+                <table class="u-table-entity">
+                    <colgroup>
+                        <col width="14.3%">
+                        <col width="5.4%">
+                        <col width="80.3%">
+                    </colgroup>
+                    <tbody class="u-custom-color-1 u-table-body u-table-body-1">
+                        <tr style="height: 44px;">
+                            <td class="u-table-cell">
+                                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-hover-palette-1-light-2 u-text-white u-btn-1" href="/results/teacherPersonal">Главная</a>
+                            </td>
+                            <td class="u-table-cell"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="{% static 'images/8066415-0b5291ee.png' %}" alt=""></span>
+                            </td>
+                            <td class="u-table-cell">
+                                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-text-hover-palette-1-light-2 u-btn-2" href="/results/protocol">Протокол по испытаниям</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="u-container-style u-custom-color-2 u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
+                <div class="u-container-layout u-container-layout-1">
+                    <h1 class="u-align-center u-text u-text-1"> Протокол выполнения государственных требований к физической подготовленности граждан Российской Федерации</h1>
+                </div>
+            </div>
+            <div class="u-clearfix u-custom-color-3 u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-17 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-2">
+                                <p class="u-text u-text-default u-text-2"> вид испытания (тест):</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-43 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-3">
+                                <div class="u-form u-form-1">
+                                    <form method="post" class="u-clearfix u-form-horizontal u-form-spacing-15 u-inner-form" style="padding: 15px" source="email">
+                                        {%csrf_token%}
+                                        {% block content %}
+                                        <div class="u-form-group u-form-select u-label-none u-form-group-1">
+                                            <label for="select-bd4d" class="u-label">Выпадающий список</label>
+                                            <div class="u-form-select-wrapper">
+                                                <select id="name_sport_competition" name="name_sport_competition" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white" required="required">
+                                                    <option disabled selected>Выберите испытание</option>
+                                                    <option value='Бег на 30 м'>Бег на 30 м</option>
+                                                    <option value='Бег на 60 м'>Бег на 60 м</option>
+                                                    <option value='Бег на 100 м'>Бег на 100 м</option>
+                                                    <option value='Бег на 3000 м'>Бег на 3000 м</option>
+                                                    <option value='Бег на 2000 м'> Бег на 2000 м</option>
+                                                    <option value='Бег на лыжах на 3 км'> Бег на лыжах на 3 км</option>
+                                                    <option value='Бег на лыжах на 5 км'> Бег на лыжах на 5 км</option>
+                                                    <option value='Кросс на 3 км (бег по пересеченной местности)'> Кросс на 3 км (бег по пересеченной местности)</option>
+                                                    <option value='Кросс на 5 км (бег по пересеченной местности)'> Кросс на 5 км (бег по пересеченной местности)</option>
+                                                    <option value='Метание спортивного снаряда весом 500 г'> Метание спортивного снаряда весом 500 г</option>
+                                                    <option value='Метание спортивного снаряда весом 700 г'> Метание спортивного снаряда весом 700 г</option>
+                                                    <option value='Наклон вперед из положения стоя на на гимнастической скамье'> Наклон вперед из положения стоя на на гимнастической скамье</option>
+                                                    <option value='Плавание на 50 м'> Плавание на 50 м</option>
+                                                    <option value='Поднимание туловища из положения лежа на спине'> Поднимание туловища из положения лежа на спине</option>
+                                                    <option  value='Подтягивание из виса лежа на низкой перекладине 90 см'> Подтягивание из виса лежа на низкой перекладине 90 см</option>
+                                                    <option value='Подтягивание из виса на высокой перекладине'> Подтягивание из виса на высокой перекладине</option>
+                                                    <option value='Прыжок в длину с места толчком двумя ногами'> Прыжок в длину с места толчком двумя ногами</option>
+                                                    <option value='Прыжок в длину с разбега'> Прыжок в длину с разбега</option>
+                                                    <option value='Рывок гири 16 кг'> Рывок гири 16 кг</option>
+                                                    <option value='Приседание с гирей'> Приседание с гирей</option>
+                                                    <option value='Самозащита без оружия'> Самозащита без оружия</option>
+                                                    <option value='Сгибание и разгибание рук в упоре лежа на полу'> Сгибание и разгибание рук в упоре лежа на полу</option>
+                                                    <option value='Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м из пневматической винтовки с диоптрическим прицелом, либо "электронного оружия"'> Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м из пневматической винтовки с диоптрическим прицелом, либо электронного оружия</option>
+                                                    <option value='Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м из пневматической винтовки с открытым прицелом'> Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м из пневматической винтовки с открытым прицелом</option>
+                                                    <option value='Туристический поход с проверкой туристических навыков'> Туристический поход с проверкой туристических навыков</option>
+                                                    <option value='Челночный бег 3х10 м'> Челночный бег 3х10 м</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="u-form-group u-form-submit u-label-none">
+                                            
+                                            <input type="submit" value="Отобразить" class="btn" >
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="u-expanded-width u-table u-table-responsive u-table-2 container">
+                <table class="u-table-entity">
+                    <colgroup>
+                        <col width="11%">
+                        <col width="11%">
+                        <col width="11%">
+                        <col width="11%">
+                        <col width="11%">
+                        <col width="11.2%">
+                        <col width="11%">
+                        <col width="11.8%">
+                        <col width="11%">
+                    </colgroup>
+                    <thead class="u-align-center u-grey-75 u-table-header u-table-header-1 sticky">
+                        <tr style="height: 107px;">
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">№</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Ф.И.О.</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">УИН участника</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Пол</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Факультет</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Курс</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">ступень ГТО</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Результат<br>выполнения
+                            </th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Уровень<br>выполнения
+                            </th>
+                        </tr>
+                    </thead>
+                    {% if results_sport_competition_dict %}
+                    <tbody class="u-grey-75 u-table-body u-table-body-2">
+                        {% for number, info in results_sport_competition_dict.items %}
+                        <tr class="hidden hidden-1">
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{number}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.FIO}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell"><a href="/results/viewResults?id={{info.UIN}}">{{info.UIN}}</a></td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.GENDER}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.FACULTY}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.COURS}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.STAGE_GTO}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.RESULT_SPORT_COMPETITION}}</td>
+                            <td class="u-border-1 u-border-grey-50 u-table-cell">{{info.LVL_RESULT}}</td>
+                        </tr>
+                        {% endfor %}
+                        {% endif %}
+                    </tbody>
+                </table>
+                {% endblock %}
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1 u-footer" id="sec-1a54">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                                <p class="u-text u-text-default u-text-1"> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького,</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <p class="u-text u-text-default u-text-2"> Тел.: +7 (846) 207-44-00</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                            <div class="u-container-layout u-container-layout-3">
+                                <p class="u-text u-text-default u-text-3"> E-mail: rectorat@sgspu.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

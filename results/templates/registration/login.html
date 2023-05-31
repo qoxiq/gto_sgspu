@@ -1,0 +1,120 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>login</title>
+    <link rel="stylesheet" href="{% static 'css/mains.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <!-- <script class="u-script" type="text/javascript" src="{% static 'js/main_js.js' %}" defer=""></script> -->
+    <script class="u-script" type="text/javascript" src="{% static 'js/main.js' %}" defer=""></script>
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="login">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1" id="sec-723c" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-custom-sm u-layout-custom-xs u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-23-lg u-size-23-xl u-size-24-md u-size-60-sm u-size-60-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-bottom-lg u-container-layout-1">
+                                <a href='/results/main'><img class="u-image u-image-default u-image-1" src="{% static 'images/sgp.png' %}" alt="" data-image-width="464" data-image-height="120" title="main"></a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-12-md u-size-6-lg u-size-60-sm u-size-60-xs u-size-7-xl u-layout-cell-2">
+                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-container-layout-2">
+                                <a href="/results/history" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">история<span style="font-size: 0.875rem;"></span>
+                  </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-13-md u-size-60-sm u-size-60-xs u-size-7-lg u-size-7-xl u-layout-cell-3">
+                            <div class="u-container-layout u-valign-bottom-md u-valign-middle-xl u-container-layout-3">
+                                <a href="/results/standards" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">нормативы<span style="font-size: 0.875rem;"></span>
+                  </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-11-md u-size-60-sm u-size-60-xs u-size-8-lg u-size-8-xl u-layout-cell-4">
+                            <div class="u-container-layout u-container-layout-4">
+                                <a href="/results/contacts" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">справочная</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-15-xl u-size-16-lg u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-5">
+                            <div class="u-container-layout u-container-layout-5">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">версия для слабовидящих</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-clearfix u-image u-section-1" id="sec-e72f" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <p class="u-text u-text-body-alt-color u-text-default u-text-1">ВХОД </p>
+            <div class="u-border-1 u-border-custom-color-2 u-container-style u-custom-color-2 u-expanded-width-xs u-group u-opacity u-opacity-95 u-radius-22 u-shape-round u-group-1">
+                <div class="u-container-layout u-valign-top u-container-layout-1">
+                    <div class="u-form u-form-1">
+                        <form method="post" class="u-clearfix u-form-spacing-25 u-form-vertical u-inner-form " source="email " name="form " style="padding: 19px; ">
+                        {% csrf_token %}
+                            <div class="u-form-group u-form-name u-label-none ">
+                                <label for="name-e9b4 " class="u-label ">УИН</label>
+                                <input type="login" placeholder="УИН " id="name-e9b4 " name="username" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white " required=" ">
+                            </div>
+                            <div class="u-form-group u-label-none ">
+                                <label for="email-e9b4 " class="u-label ">пароль</label>
+                                <input type="password" placeholder="Пароль " id="email-e9b4 " name="password" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white " required="required ">
+                            </div>
+                            <div class="u-align-center u-form-group u-label-none ">
+                                <input type="submit" value="Войти" class="u-btn u-btn-submit u-button-style u-custom-color-3 u-btn-1 ">
+
+                            </div>
+
+                        </form>
+                    </div>
+                    <a href="/results/registration" class="u-border-none u-btn u-button-style u-custom-color-3 u-hover-palette-1-dark-1 u-btn-2 ">Регистрация</a>
+                    <a href="/results/recovery_password" class="u-border-none u-btn u-button-style u-custom-color-3 u-hover-palette-1-dark-1 u-btn-3 ">Забыли пароль?</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1 u-footer " id="sec-73c9 ">
+        <div class="u-clearfix u-sheet u-sheet-1 ">
+            <div class="u-expanded-width u-list u-list-1 ">
+                <div class="u-repeater u-repeater-1 ">
+                    <div class="u-container-style u-list-item u-repeater-item ">
+                        <div class="u-container-layout u-similar-container u-container-layout-1 ">
+                            <p class="u-custom-item u-text u-text-1 "> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького, 65/67 </p>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item ">
+                        <div class="u-container-layout u-similar-container u-container-layout-2 ">
+                            <p class="u-custom-item u-text u-text-default u-text-2 "> Тел.: +7 (846) 207-44-00</p>
+                        </div>
+                    </div>
+                    <div class="u-container-style u-list-item u-repeater-item ">
+                        <div class="u-container-layout u-similar-container u-container-layout-3 ">
+                            <p class="u-custom-item u-text u-text-default u-text-3 "> E-mail: rectorat@sgspu.ru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

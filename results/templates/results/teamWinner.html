@@ -1,0 +1,135 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>teamWinner</title>
+    <link rel="stylesheet" href="{% static 'css/teach.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/teamWinner.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <script class="u-script" type="text/javascript" src="{% static 'js/teach_js.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/teach.js' %}" defer=""></script>
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="teamWinner">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1 u-header" id="sec-1178">
+        <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-25-xl u-size-30-lg u-size-34-md u-size-34-sm u-size-34-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-top u-container-layout-1">
+                                <a href="/results/teacherPersonal" class="u-image u-logo u-image-1" data-image-width="464" data-image-height="120" title="teacherPersonal">
+                                    <img src="{% static 'images/sgp.png' %}" class="u-logo-image u-logo-image-1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-26-md u-size-26-sm u-size-26-xs u-layout-cell-2">
+                            <div class="u-container-layout u-valign-top-lg u-valign-top-md u-valign-top-xl u-container-layout-2">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">Версия для слабовидящих</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-10-lg u-size-15-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-3">
+                            <div class="u-container-layout u-valign-middle-sm u-valign-middle-xs u-valign-top-lg u-valign-top-md u-container-layout-3">
+                                <a href="/results/profileTeacher" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">мой профиль</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section class="u-clearfix u-image u-section-1" id="sec-d234" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-table u-table-responsive u-table-1">
+                <table class="u-table-entity">
+                    <colgroup>
+                        <col width="2%">
+                        <col width="5.1%">
+                        <col width="92.9%">
+                    </colgroup>
+                    <tbody class="u-custom-color-3 u-table-body u-table-valign-middle u-table-body-1">
+                        <tr style="height: 53px;">
+                            <td class="u-table-cell">
+                                <a class="u-active-none u-border-2 u-border-hover-custom-color-3 u-btn u-button-style u-hover-none u-none u-text-body-alt-color u-text-hover-palette-1-light-2 u-btn-1" href="/results/teacherPersonal">Главная</a>
+                            </td>
+                            <td class="u-table-cell"><span class="u-file-icon u-icon u-text-white u-icon-1"><img src="{% static 'images/8066415-8d92c784.png' %}" alt=""></span>&nbsp;
+                            </td>
+                            <td class="u-table-cell">
+                                <a class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-body-alt-color u-text-hover-palette-1-light-2 u-btn-2" href="/results/teamWinner">Командное первенство</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="u-align-center u-container-style u-custom-color-4 u-group u-group-1">
+                <div class="u-container-layout u-valign-middle u-container-layout-1">
+                    <h3 class="u-text u-text-1"> Турнирная таблица (Командное первенство)</h3>
+                </div>
+            </div>
+            <div class="u-expanded-width u-table u-table-responsive u-table-2 container">
+                <table class="u-table-entity">
+                    <colgroup>
+                        <col width="13.7%">
+                        <col width="62.8%">
+                        <col width="23.5%">
+                    </colgroup>
+                    <thead class="u-align-center u-grey-80 u-table-header u-table-header-1 sticky">
+                        <tr style="height: 46px;">
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Место</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Название команды</th>
+                            <th class="u-border-1 u-border-grey-50 u-table-cell">Кол-во очков</th>
+                        </tr>
+                    </thead>
+                    {% block content %}
+                    <tbody class="u-grey-70 u-table-body u-table-body-2">
+                        {% for team_name, info in context.items %}
+                        <tr style="height: 46px;">
+                            {% for elem in info %}
+                            <td class="u-border-1 u-border-grey-80 u-table-cell">{{elem}}</td>
+                            {% endfor %}
+                        {% endfor %}
+                    {% endblock %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1" id="sec-3b38" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction="">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                            <div class="u-container-layout u-container-layout-1">
+                                <p class="u-text u-text-default u-text-1"> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького,</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <p class="u-text u-text-default u-text-2"> Тел.: +7 (846) 207-44-00</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                            <div class="u-container-layout u-container-layout-3">
+                                <p class="u-text u-text-default u-text-3"> E-mail: rectorat@sgspu.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

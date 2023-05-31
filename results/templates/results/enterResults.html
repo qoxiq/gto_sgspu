@@ -1,0 +1,151 @@
+{% load static %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>EnterResults</title>
+    <link rel="stylesheet" href="{% static 'css/stud.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'css/EnterResults.css' %}" media="screen">
+    <link rel="stylesheet" href="{% static 'letsee/letsee.css' %}">
+    <script class="u-script" type="text/javascript" src="{% static 'js/stud_js.js' %}" defer=""></script>
+    <script class="u-script" type="text/javascript" src="{% static 'js/stud.js' %}" defer=""></script>
+    <script src="{% static 'letsee/letsee.js' %}"></script>
+    <meta name="referrer" content="origin">
+    <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+    <meta name="theme-color" content="#478ac9">
+    <meta property="og:title" content="EnterResults">
+    <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="ru">
+    <header class="u-clearfix u-header u-palette-1-dark-1 u-header" id="sec-dcc4">
+        <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-gutter-0 u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-24-lg u-size-24-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-top-sm u-container-layout-1">
+                                <a href="/results/studentsPersonal" class="u-image u-logo u-image-1" data-image-width="464" data-image-height="120" title="StudentsPersonal">
+                                    <img src="{% static 'images/sgp.png' %}" class="u-logo-image u-logo-image-1">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20-lg u-size-20-xl u-size-30-md u-size-30-sm u-size-30-xs u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <a href="javascript://" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">версия для слабовидящих</a>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-13-lg u-size-16-xl u-size-60-md u-size-60-sm u-size-60-xs u-layout-cell-3">
+                            <div class="u-container-layout u-valign-middle-sm u-container-layout-3">
+                                <a href="/results/profile" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">мой профиль</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    
+    <section class="u-clearfix u-image u-section-1" id="sec-e2b9" data-image-width="698" data-image-height="434">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-container-style u-custom-color-5 u-group u-group-1">
+                <div class="u-container-layout u-container-layout-1">
+                    <a href="/results/studentsPersonal" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-alt-color u-text-hover-palette-4-light-1 u-btn-1">Главная</a>
+                    <img class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1" src="{% static 'images/arrow.png' %}" alt="" data-image-width="24" data-image-height="24">
+                    <a href="/results/enterResults" class="u-border-1 u-border-active-palette-2-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-btn u-button-style u-none u-text-body-alt-color u-text-hover-palette-4-light-1 u-btn-2">Внести результаты</a>
+                </div>
+            </div>
+            <div class="u-align-left u-container-style u-custom-color-7 u-group u-group-2">
+                <div class="u-container-layout u-valign-middle u-container-layout-2">
+                    <h3 class="u-text u-text-1">Внести результаты</h3>
+                </div>
+            </div>
+            <div class="u-align-left u-container-style u-custom-color-8 u-group u-group-3">
+                <div class="u-container-layout u-valign-middle u-container-layout-3">
+                    <h3 class="u-text u-text-2">Испытания (тесты)</h3>
+                </div>
+            </div>
+            
+            <div class="u-custom-color-5 u-form u-form-1">
+                <form class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" method="post" source="email" name="form" style="padding: 10px;">
+                    {% csrf_token %}
+                    <div class="u-form-group u-form-partition-factor-2 u-form-select u-form-group-1">
+                        <label for="select-d6b9" class="u-label u-label-1">Испытания (тесты)</label>
+                        <div class="u-form-select-wrapper">
+                            <select id="select-d6b9" name="name_sport_competition" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-1" required="required">
+                  <option disabled selected > </option>
+                  <option value="Бег на 30 м" data-calc="">Бег на 30 м</option>
+                  <option value="Бег на 60 м" data-calc="">Бег на 60 м</option>
+                  <option value="Бег на 100 м" data-calc="">Бег на 100 м</option>
+                  <option value="Бег на 3000 м" data-calc="">Бег на 3000 м</option>
+                  <option value="Бег на 2000 м" data-calc="">Бег на 2000 м</option>
+                  <option value="Подтягивание из виса на высокой перекладине" data-calc="">Подтягивание из виса на высокой перекладине</option>
+                  <option value="Сгибание и разгибание  рук в упоре лежа на полу" data-calc="">Сгибание и разгибание  рук в упоре лежа на полу</option>
+                  <option value="Рывок гири 16 кг" data-calc="">Рывок гири 16 кг</option>
+                  <option value="Наклон вперед из положения стоя на гимнастической скамье" data-calc="">Наклон вперед из положения стоя на гимнастической скамье</option>
+                  <option value="Челночный бег 3х10м" data-calc="">Челночный бег 3х10м</option>
+                  <option value="Прыжок в длину с разбега" data-calc="">Прыжок в длину с разбега</option>
+                  <option value="Прыжок в длину с м двумя ногами (см)еста толчком" data-calc="">Прыжок в длину с м двумя ногами (см)еста толчком</option>
+                  <option value="Метание спортивного снаряда весом 700 г" data-calc="">Метание спортивного снаряда весом 700 г</option>
+                  <option value="Метание спортивного снаряда весом 500 г" data-calc="">Метание спортивного снаряда весом 500 г</option>
+                  <option value="Поднимание туловища из положения лежа на спине" data-calc="">Поднимание туловища из положения лежа на спине</option>
+                  <option value="Бег на лыжах на 5 км" data-calc="">Бег на лыжах на 5 км</option>
+                  <option value="Кросс на 5 км (бег по пересеченной местности)" data-calc="">Кросс на 5 км (бег по пересеченной местности)</option>
+                  <option value="Бег на лыжах на 3 км" data-calc="">Бег на лыжах на 3 км</option>
+                  <option value="Кросс на 3 км (бег по пересеченной местности)" data-calc="">Кросс на 3 км (бег по пересеченной местности)</option>
+                  <option value="Плавание на 50 м" data-calc="">Плавание на 50 м</option>
+                  <option value="Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м (очки): из пневматической винтовки с открытым прицелом" data-calc="">Стрельба из положения сидя или стоя с опорой локтей о стол или стойку, дистанция 10 м (очки): из пневматической винтовки с открытым прицелом</option>
+                  <option value="Стрельба из пневматической винтовки с диоптрическим прицелом, либо «электронного оружия»" data-calc="">Стрельба из пневматической винтовки с диоптрическим прицелом, либо «электронного оружия»</option>
+                  <option value="Самозащита без оружия (очки)" data-calc="">Самозащита без оружия (очки)</option>
+                  <option value="Туристический поход с проверкой туристических навыков (протяженность не менее, км)" data-calc="">Туристический поход с проверкой туристических навыков (протяженность не менее, км)</option>
+                </select>
+                        </div>
+                    </div>
+                    <div class="u-form-group u-form-partition-factor-2">
+                        <label for="email-0c83" class="u-label u-label-2">Результат</label>
+                        <input type="text" id="email-0c83" name="result_sport_competition" class="u-border-1 u-border-grey-30 u-input u-input-rectangle u-white u-input-2" required="required">
+                    </div>
+                    <div class="u-align-center u-form-group ">
+                        <input class="u-border-none u-btn u-btn-submit u-button-style u-custom-color-9 u-hover-custom-color-2 u-btn-3 " type="submit" value="Сохранить результат" type="submit" value="Сохранить результаты"/>
+                        
+                    </div>
+                    
+            </div>
+        </div>
+    </section>
+</form>
+    <footer class="u-align-center u-clearfix u-footer u-palette-1-dark-1 u-footer" id="sec-6749">
+        <div class="u-clearfix u-sheet u-sheet-1">
+            <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+                <div class="u-layout">
+                    <div class="u-layout-row">
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-1">
+                            <div class="u-container-layout u-valign-middle u-container-layout-1">
+                                <p class="u-text u-text-default u-text-1"> Адрес ВУЗа: 443099, Россия, г.Самара, ул.М.Горького,</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-2">
+                            <div class="u-container-layout u-container-layout-2">
+                                <p class="u-text u-text-default u-text-2"> Тел.: +7 (846) 207-44-00</p>
+                            </div>
+                        </div>
+                        <div class="u-container-style u-layout-cell u-size-20 u-layout-cell-3">
+                            <div class="u-container-layout u-container-layout-3">
+                                <p class="u-text u-text-default u-text-3"> E-mail: rectorat@sgspu.ru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>
